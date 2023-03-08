@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Carros</title>
+</head>
+<body>
+    
+    <nav class="container-nav">
+        <h1 style="margin-right: 700px; font-size: 40px;">Auto Car</h1>
+        <a href="/api/carros"><li>Home</li></a>
+        <a href="/api/cadastro"><li>Cadastrar</li></a>
+        <a href="/api/login"><li>Sair</li></a>
+    </nav>
+    
+
+        <form method="post" th:action="@{'/api/editar' + ${carro.id}}" class="container-form">
+            <label>Id:</label>
+            <input type="number" name="id" th:value="${carro.id}">
+            <label>Nome:</label>
+            <input type="text" name="nome" th:value="${carro.nome}">
+            <label>Marca:</label>
+            <input type="text" name="marca" th:value="${carro.marca}">
+            <label>Ano:</label>
+            <input type="text" name="ano" th:value="${carro.ano}">
+            <label>Valor:</label>
+            <input type="text" name="valor" th:value="${carro.valor}">
+
+            <button type="submit" style="color: black;">Alterar</button>
+        </form>
+
+</body>
+</html>
